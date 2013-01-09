@@ -58,6 +58,9 @@ QWebPage.
 An archive using WarcProxy was obtained by navigating to the website in
 Google Chrome while using the proxy.
 
+A render of a previous version of the website was obtained by visiting
+Archive.org's WayBackMachine.
+
 WARC files were then rendered using warc-proxy in Google Chrome. The rendering
 of WARC files from different crawlers is significantly different. The only
 method used that crawled the Flash ads on the site was using WarcProxy to
@@ -84,4 +87,9 @@ a robust asynchronous socket library like Tornado or Twisted.
 
 Comparison images
 =================
-![alt text](blob/master/Compare/Control_thumb.png "Control")
+![alt text](WarcProxy/blob/master/Compare/Control_thumb.png "Control")
+![alt text](WarcProxy/blob/master/Compare/wget_thumb.png "wget")
+![alt text](WarcProxy/blob/master/Compare/WayBackMachine_thumb.png "WayBackMachine")
+![alt text](WarcProxy/blob/master/Compare/WarcMiddleware_thumb.png "WarcMiddleware")
+![alt text](WarcProxy/blob/master/Compare/Flashfreeze_thumb.png "Flashfreeze")
+![alt text](WarcProxy/blob/master/Compare/WarcProxy_thumb.png "WarcProxy")

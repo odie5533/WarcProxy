@@ -87,9 +87,9 @@ a robust asynchronous socket library like Tornado or Twisted.
 
 Comparison images
 =================
-![alt text](WarcProxy/blob/master/Compare/Control_thumb.png "Control")
-![alt text](WarcProxy/blob/master/Compare/wget_thumb.png "wget")
-![alt text](WarcProxy/blob/master/Compare/WayBackMachine_thumb.png "WayBackMachine")
-![alt text](WarcProxy/blob/master/Compare/WarcMiddleware_thumb.png "WarcMiddleware")
-![alt text](WarcProxy/blob/master/Compare/Flashfreeze_thumb.png "Flashfreeze")
-![alt text](WarcProxy/blob/master/Compare/WarcProxy_thumb.png "WarcProxy")
+![alt text](WarcProxy/raw/master/Compare/Control_thumb.png "Control")
+![alt text](WarcProxy/raw/master/Compare/wget_thumb.png "wget")
+![alt text](WarcProxy/raw/master/Compare/WayBackMachine_thumb.png "WayBackMachine")
+![alt text](WarcProxy/raw/master/Compare/WarcMiddleware_thumb.png "WarcMiddleware")
+![alt text](WarcProxy/raw/master/Compare/Flashfreeze_thumb.png "Flashfreeze")
+![alt text](WarcProxy/raw/master/Compare/WarcProxy_thumb.png "WarcProxy")

@@ -6,6 +6,9 @@ from tornado.httputil import HTTPHeaders
 from tornado.iostream import IOStream, SSLIOStream
 from tornado import stack_context
 from tornado.util import b, GzipDecompressor
+from tornado.simple_httpclient import SimpleAsyncHTTPClient, _HTTPConnection, match_hostname
+
+from tornado_proxy import warcrecords
 
 import base64
 import collections
@@ -17,10 +20,6 @@ import socket
 import sys
 import time
 import urlparse
-
-from tornado.simple_httpclient import SimpleAsyncHTTPClient, _HTTPConnection, match_hostname
-
-import warcrecords
 
 """
 Singleton that handles maintaining a single output file for many connections

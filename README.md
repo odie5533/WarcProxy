@@ -87,26 +87,26 @@ a robust asynchronous socket library like Tornado or Twisted.
 
 Comparison images
 =================
-![alt text](WarcProxy/raw/master/Compare/Control_thumb.png "Control")
+Control:
 
-Control
+![Control](https://raw.github.com/iramari/WarcProxy/master/Compare/Control_thumb.png "Control")
 
-![alt text](WarcProxy/raw/master/Compare/wget_thumb.png "wget")
+wget:
 
-wget
+![wget](https://raw.github.com/iramari/WarcProxy/master/Compare/wget_thumb.png "wget")
 
-![alt text](WarcProxy/raw/master/Compare/WayBackMachine_thumb.png "WayBackMachine")
+WayBackMachine:
 
-WayBackMachine
+![alt text](https://raw.github.com/iramari/WarcProxy/master/Compare/WayBackMachine_thumb.png "WayBackMachine")
 
-![alt text](WarcProxy/raw/master/Compare/WarcMiddleware_thumb.png "WarcMiddleware")
+WarcMiddleware:
 
-WarcMiddleware
+![alt text](https://raw.github.com/iramari/WarcProxy/master/Compare/WarcMiddleware_thumb.png "WarcMiddleware")
 
-![alt text](WarcProxy/raw/master/Compare/Flashfreeze_thumb.png "Flashfreeze")
+Flashfreeze:
 
-Flashfreeze
+![alt text](https://raw.github.com/iramari/WarcProxy/master/Compare/Flashfreeze_thumb.png "Flashfreeze")
 
-![alt text](WarcProxy/raw/master/Compare/WarcProxy_thumb.png "WarcProxy")
+WarcProxy:
 
-WarcProxy
+![alt text](https://raw.github.com/iramari/WarcProxy/master/Compare/WarcProxy_thumb.png "WarcProxy")

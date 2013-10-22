@@ -1,25 +1,8 @@
-from __future__ import absolute_import, division, with_statement
+from tornado.simple_httpclient import SimpleAsyncHTTPClient, _HTTPConnection
 
-from tornado.escape import utf8, _unicode, native_str
-from tornado.httpclient import HTTPRequest, HTTPResponse, HTTPError, AsyncHTTPClient, main
-from tornado.httputil import HTTPHeaders
-from tornado.iostream import IOStream, SSLIOStream
-from tornado import stack_context
-from tornado.util import b, GzipDecompressor
-from tornado.simple_httpclient import SimpleAsyncHTTPClient, _HTTPConnection, match_hostname
+from . import warcrecords
 
-from tornado_proxy import warcrecords
-
-import base64
-import collections
-import copy
 import functools
-import os.path
-import re
-import socket
-import sys
-import time
-import urlparse
 
 """
 Singleton that handles maintaining a single output file for many connections
@@ -84,7 +67,7 @@ class Warc_HTTPConnection(_HTTPConnection, object):
         record = warcrecords.WarcResponseRecord(url=self.request.url,
                                                 block=self._block_string)
         WarcOutputSingleton().write_record(record)
-            
+
         super(Warc_HTTPConnection, self)._on_body(data)
 
     def _on_chunk_length(self, data):
@@ -96,17 +79,6 @@ class Warc_HTTPConnection(_HTTPConnection, object):
         super(Warc_HTTPConnection, self)._on_chunk_data(data)
 
 class WarcSimpleAsyncHTTPClient(SimpleAsyncHTTPClient):
-    def __init__(self, *args, **kwargs):
-        self._warcout = WarcOutputSingleton()
-        SimpleAsyncHTTPClient.__init__(self, *args, **kwargs)
-
-    def _process_queue(self):
-        with stack_context.NullContext():
-            while self.queue and len(self.active) < self.max_clients:
-                request, callback = self.queue.popleft()
-                key = object()
-                self.active[key] = (request, callback)
-                Warc_HTTPConnection(self.io_loop, self, request,
-                                functools.partial(self._release_fetch, key),
-                                callback,
-                                self.max_buffer_size)
+    def _handle_request(self, request, release_callback, final_callback):
+        Warc_HTTPConnection(self.io_loop, self, request, release_callback,
+                        final_callback, self.max_buffer_size, self.resolver)
